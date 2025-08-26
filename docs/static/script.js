@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let firstLink = "";
 
-  fetchData("../menu.json", "json").then((data) => {
+  fetchData("./menu.json", "json").then((data) => {
     const reverseArray = [...data].reverse();
 
     reverseArray.forEach(
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // create iframe
     const iframe = document.createElement("iframe");
-    iframe.src = `../${dataIframe}/index.html`;
+    iframe.src = `./${dataIframe}/index.html`;
     iframe.className = "iframe-wrapper";
     if (dataIframe === "25.fitBounds-with-padding") {
       iframe.classList.add("resize-h");
