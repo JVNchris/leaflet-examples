@@ -21,27 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const subTitle = document.querySelector("h2");
   const nav = document.querySelector(".menu-examples");
 
-  async function fetchData(url, type) {
-    try {
-      const response = await fetch(url);
-      const data =
-        type === "text" ? await response.text() : await response.json();
-      return data;
-    } catch (err) {
-      console.error(err);
-    }
-  }
 
-  let firstLink = "";
-
-  fetchData("./menu.json", "json").then((data) => {
-    const reverseArray = [...data].reverse();
-
-    reverseArray.forEach(
-      ({ link, text, info, position, style, extend }, index) => {
-        if (index === 0) {
-          firstLink = link;
-        }
 
         const reversIndex = reverseArray.length - index;
         // add zero to index
